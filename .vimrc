@@ -9,7 +9,12 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
 runtime bundle/cpp_cpplint.vim
-set tags+=tags;~/workspace/nextunity_aslamk/
+let g:airline#extensions#ale#enabled = 1
+"let g:ale_completion_enabled = 1
+let g:ale_python_pylint_use_global = 1
+"let g:ale_completion_enabled = 1
+"let g:ale_cursor_detail = 1
+let g:ale_linters = {'python': ['pyls', 'pylint']}
 
 color desert
 
@@ -146,7 +151,6 @@ nnoremap z5 :set foldlevel=5<cr>
 " }}}
 
 
-let g:pathogen_blacklist="syntastic,cscope"
 nnoremap <leader>t :JavaSearch -s all -x declarations<cr>
 nnoremap <leader>i :JavaImport<cr>
 nnoremap <leader>g :JavaGet<cr>
@@ -161,3 +165,14 @@ aug QFClose
   au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 aug END
 
+"Python settings: four spaces - 1 tab
+"ensure line length doesn’t go beyond 80
+"store the file in a Unix format
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
