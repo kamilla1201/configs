@@ -14,7 +14,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_use_global = 1
 "let g:ale_completion_enabled = 1
 "let g:ale_cursor_detail = 1
-let g:ale_linters = {'python': ['pyls', 'pylint']}
+let g:ale_linters = {'python': ['pylint', 'autopep8'], 'javascript': ['eslint']}
 
 color desert
 
@@ -77,8 +77,8 @@ inoremap <C-t> <Esc>:tabnew<Space>
 "vnoremap / /\v
 
 noremap! <F1> <Esc>                            " Avoid accidental hits of F1 while aiming for Esc
-noremap <F9> <Esc>:tabp<CR>
-noremap <F10> <Esc>:tabn<CR>
+noremap <F8> <Esc>:tabp<CR>
+noremap <F9> <Esc>:tabn<CR>
 noremap <F12> <Esc><C-W><C-W>
 
 map <C-N> :NERDTree<CR>
@@ -176,3 +176,8 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+
+
+" YouCompleteMe
+let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
+

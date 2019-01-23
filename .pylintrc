@@ -2,4 +2,4 @@
 extension-pkg-whitelist=cv2
 max-line-length=120
 good-names=i,j,k,_,x,y
-
+disable=bad-continuation

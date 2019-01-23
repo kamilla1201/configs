@@ -65,11 +65,12 @@ alias find='find 2>/dev/null'
 
 # python aliases
 alias pi="sudo pip install --upgrade"
+alias pi3="sudo python3 -m pip install --upgrade"
 alias py="/usr/bin/python"
 alias py3="/usr/bin/python3"
 
 # c++ aliases
-alias c="g++ --std=c++11 -Wall -Wextra -02"
+alias c="g++ --std=c++11 -Wall -Wextra -O2"
 
 # git aliases
 alias gl="git log"
@@ -125,3 +126,12 @@ unset command_not_found_handle
 #  RECYCLE_BIN_PATH="C:/\$Recycle.Bin"
 #  function rm() { mv "$@" "$RECYCLE_BIN_PATH" }
 #fi
+
+
+export PATH="/home/kamilla/miniconda3/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/completion.zsh.inc'; fi

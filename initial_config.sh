@@ -3,10 +3,21 @@ cp .tmux.conf ~
 cp .vimrc ~
 cp .zshrc ~
 
-sudo apt install vim
-sudo apt-get install tmux
-sudo apt-get install pylint
-sudo apt-get install tsserver
+sudo apt install vim -y
+sudo apt-get install tmux -y
+sudo apt-get install pylint -y
+sudo apt-get install tsserver -y
+sudo apt install gnome-tweak-tool -y
+sudo apt install gufw -y
+sudo apt-get install vlc -y
+sudo apt-get install gimp -y
+sudo apt-get install shutter -y
+sudo apt-get install ubuntu-restricted-extras -y
+
+
+
+
+sudo ufw enable
 
 # install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \\
