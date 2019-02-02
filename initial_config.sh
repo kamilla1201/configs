@@ -11,6 +11,7 @@ apt-get install gimp -y
 apt-get install shutter -y
 apt-get install ubuntu-restricted-extras -y
 apt-get install curl -y
+apt-get install x11-xserver-utils -y
 
 ufw enable
 

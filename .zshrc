@@ -1,5 +1,6 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=mh
 
 # Command auto-correction
 ENABLE_CORRECTION="true"
@@ -24,7 +25,6 @@ promptinit
 
 # time and date on the right side of the screen
 RPROMPT="%{$fg[cyan]%}[%* on %D]%{$reset_color%}"
-ZSH_THEME=mh
 
 # customize the word style
 autoload -U select-word-style
@@ -64,7 +64,7 @@ alias j=jobs
 alias find='find 2>/dev/null'
 
 # python aliases
-alias pi="sudo pip install --upgrade"
+alias pi2="sudo pip2 install --upgrade"
 alias pi3="sudo python3 -m pip install --upgrade"
 alias py="/usr/bin/python"
 alias py3="/usr/bin/python3"
@@ -126,9 +126,6 @@ unset command_not_found_handle
 #  RECYCLE_BIN_PATH="C:/\$Recycle.Bin"
 #  function rm() { mv "$@" "$RECYCLE_BIN_PATH" }
 #fi
-
-
-export PATH="/home/kamilla/miniconda3/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/path.zsh.inc' ]; then . '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/path.zsh.inc'; fi
