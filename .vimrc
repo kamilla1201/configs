@@ -17,6 +17,7 @@ let g:ale_python_pylint_use_global = 1
 let g:ale_linters = {'python': ['pylint', 'autopep8'], 'javascript': ['eslint']}
 
 color desert
+hi Search cterm=NONE ctermfg=black ctermbg=blue
 
 " Recommended Syntastic settings {{{
 
@@ -70,8 +71,8 @@ nnoremap <leader>v V`]                         " reselect the text that was just
 
 set pastetoggle=<F2>                           " when in insert mode, press <F2> to go to past with/without autoindentation
 
-nnoremap <C-t> :tabnew<Space>
-inoremap <C-t> <Esc>:tabnew<Space>
+nnoremap <C-y> :tabnew<Space>
+inoremap <C-y> <Esc>:tabnew<Space>
 
 "nnoremap / /\v                                " use python regex
 "vnoremap / /\v
@@ -181,3 +182,5 @@ au BufNewFile,BufRead *.py
 " YouCompleteMe
 let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
+" Ctags
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
