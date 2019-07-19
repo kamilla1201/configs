@@ -54,8 +54,10 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
+alias gh=fg
+
 alias vi=vim
-alias ls='ls --color=auto'
+alias ls='ls --color=auto' # should be removed on macos
 alias la='ls -A'
 
 alias grep='grep 2>/dev/null --color -nHI'
@@ -96,6 +98,7 @@ alias gpr='git pull --rebase'
 alias gprc='git pull --rebase origin integration-controlpath'
 alias gprp='git pull --rebase origin integration-platform'
 
+#alias git=git-together
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -105,7 +108,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -118,6 +120,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GIT_TOGETHER_NO_SIGNOFF=1
 
 unset command_not_found_handle
 
@@ -132,3 +135,12 @@ if [ -f '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/path.zsh.inc' ]; th
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/kamilla/exec -l /usr/bin/zsh/google-cloud-sdk/completion.zsh.inc'; fi
+export AWS_DEFAULT_REGION='us-west-2'
+export AWS_REGION='us-west-2'
+
+
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
