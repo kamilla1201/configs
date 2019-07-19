@@ -184,3 +184,6 @@ let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
 " Ctags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+" set Ctrl+C to copy text selected in visual mode to clipboard
+vmap <C-C> "+y
